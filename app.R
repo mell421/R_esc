@@ -1,48 +1,36 @@
 library(shiny)
 
 if(require(shiny)){
-    library(wordcloud2)
-    library('rsconnect')
-    suppressWarnings(source("./fctR/sources.R"))
-    suppressWarnings(library(tidyverse))
+    loadMesPackages <- function(){
+        library("gsheet")
+        library("tm")
+        library("SnowballC")
+        library("wordcloud")
+        library("RColorBrewer")
+        library("syuzhet")
+        library("ggplot2")
+        library(utf8)
+        library(wordcloud2)
+        #library('rsconnect')
+        library(tidyverse)
+    }
+    loadMesPackages()
 
     # Define the UI
     ui <- fluidPage(
         titlePanel("ESC database"),
-        sidebarLayout(
-            sidebarPanel(
-            ),
-            mainPanel(
-                tabsetPanel(
-                    type = "tabs",
-                    tabPanel("eurovison",
-                             dataTableOutput('eurovision')
-                    )
-                )
-
-                # wordcloud2Output('wordcloud2'),
-                # tableOutput('table')
+        tabsetPanel(
+            type = "tabs",
+            tabPanel("eurovison",
+                     dataTableOutput('eurovision')
             )
         )
-
-
     )
 
 
     # Define the server code
     server <- function(input, output) {
 
-        output$hist <- renderDataTable({
-            data <- data.frame(listDesc.desc())
-            data %>% select(tisaep,Horodateur,status)
-        })
-        output$premder <- renderDataTable({
-            data <- data.frame(premder.premder())
-            data %>% filter(tisaep.all_1 != "") %>% select(tisaep.all_1,date.premder.all_1,status.all_1)
-        })
-        output$name <- renderDataTable({
-
-        })
         output$name <- renderDataTable({
 
         })

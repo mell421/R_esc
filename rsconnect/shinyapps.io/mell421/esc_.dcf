@@ -5,9 +5,9 @@ account: mell421
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 4223356
-bundleId: 4674856
+bundleId: 4684187
 url: https://mell421.shinyapps.io/esc_/
-when: 1622754061.63548
-lastSyncTime: 1622754061.63548
+when: 1622995567.14918
+lastSyncTime: 1622995567.14918
 asMultiple: FALSE
 asStatic: FALSE
