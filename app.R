@@ -40,7 +40,7 @@ if(require(shiny)){
                 df
             }
             esc <- esc()
-            esc <- esc %>% filter(DF=="F"||DF=="1"||DF=="2") %>% select(annee:Points,-Country)
+            esc <- esc %>% filter(DF=="FI"||DF=="DF") %>% select(annee:Points,-Country)
             esc
         })
     }
