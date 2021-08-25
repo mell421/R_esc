@@ -43,6 +43,15 @@ if(require(shiny)){
             esc <- esc %>% filter(DF=="FI"||DF=="DF") %>% select(annee:Points,-Country)
             esc
         })
+        output$eurovision2 <- renderDataTable({
+            esc <- function(){
+                df <- read.csv(file = 'esc.csv')
+                df
+            }
+            esc <- esc()
+            esc <- esc %>% filter(soir=="FI"||soir=="DF") %>% select(annee:Points,-Country)
+            esc
+        })
     }
     # Return a Shiny app object
     shinyApp(ui = ui, server = server)
